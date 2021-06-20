@@ -4,6 +4,7 @@ import {useTable, useFlexLayout, useResizeColumns, useSortBy} from "react-table"
 import Cell from "./Cell";
 import Header from "./Header";
 import PlusIcon from "./img/Plus";
+import {ActionTypes} from "./utils";
 
 const defaultColumn = {
   minWidth: 50,
@@ -89,7 +90,7 @@ export default function Table({columns, data, dispatch: dataDispatch, skipReset}
               </div>
             );
           })}
-          <div className='tr add-row' onClick={() => dataDispatch({type: "add_row"})}>
+          <div className='tr add-row' onClick={() => dataDispatch({type: ActionTypes.ADD_ROW})}>
             <span className='svg-icon svg-gray icon-margin'>
               <PlusIcon />
             </span>
