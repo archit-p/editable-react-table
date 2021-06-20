@@ -1,7 +1,7 @@
-import faker from "faker";
+import faker from 'faker';
 
 export function shortId() {
-  return "_" + Math.random().toString(36).substr(2, 9);
+  return '_' + Math.random().toString(36).substr(2, 9);
 }
 
 export function randomColor() {
@@ -18,79 +18,79 @@ export function makeData(count) {
       lastName: faker.name.lastName(),
       email: faker.internet.email(),
       age: Math.floor(20 + Math.random() * 20),
-      music: faker.music.genre()
+      music: faker.music.genre(),
     };
-    options.push({label: row.music, backgroundColor: randomColor()});
+    options.push({ label: row.music, backgroundColor: randomColor() });
 
     data.push(row);
   }
 
   let columns = [
     {
-      id: "firstName",
-      label: "First Name",
-      accessor: "firstName",
+      id: 'firstName',
+      label: 'First Name',
+      accessor: 'firstName',
       minWidth: 100,
       dataType: DataTypes.TEXT,
-      options: []
+      options: [],
     },
     {
-      id: "lastName",
-      label: "Last Name",
-      accessor: "lastName",
+      id: 'lastName',
+      label: 'Last Name',
+      accessor: 'lastName',
       minWidth: 100,
       dataType: DataTypes.TEXT,
-      options: []
+      options: [],
     },
     {
-      id: "age",
-      label: "Age",
-      accessor: "age",
+      id: 'age',
+      label: 'Age',
+      accessor: 'age',
       width: 80,
       dataType: DataTypes.NUMBER,
-      options: []
+      options: [],
     },
     {
-      id: "email",
-      label: "E-Mail",
-      accessor: "email",
+      id: 'email',
+      label: 'E-Mail',
+      accessor: 'email',
       width: 300,
       dataType: DataTypes.TEXT,
-      options: []
+      options: [],
     },
     {
-      id: "music",
-      label: "Music Preference",
-      accessor: "music",
+      id: 'music',
+      label: 'Music Preference',
+      accessor: 'music',
       dataType: DataTypes.SELECT,
       width: 200,
-      options: options
+      options: options,
     },
     {
       id: 999999,
       width: 20,
-      label: "+",
+      label: '+',
       disableResizing: true,
-      dataType: "null"
-    }
+      dataType: 'null',
+    },
   ];
-  return {columns: columns, data: data, skipReset: false};
+  return { columns: columns, data: data, skipReset: false };
 }
 
 export const ActionTypes = Object.freeze({
-  ADD_OPTION_TO_COLUMN: "add_option_to_column",
-  ADD_ROW: "add_row",
-  UPDATE_COLUMN_TYPE: "update_column_type",
-  UPDATE_COLUMN_HEADER: "update_column_header",
-  UPDATE_CELL: "update_cell",
-  ADD_COLUMN_TO_LEFT: "add_column_to_left",
-  ADD_COLUMN_TO_RIGHT: "add_column_to_right",
-  DELETE_COLUMN: "delete_column",
-  ENABLE_RESET: "enable_reset"
+  ADD_OPTION_TO_COLUMN: 'add_option_to_column',
+  ADD_ROW: 'add_row',
+  UPDATE_COLUMN_TYPE: 'update_column_type',
+  UPDATE_COLUMN_HEADER: 'update_column_header',
+  UPDATE_CELL: 'update_cell',
+  ADD_COLUMN_TO_LEFT: 'add_column_to_left',
+  ADD_COLUMN_TO_RIGHT: 'add_column_to_right',
+  DELETE_COLUMN: 'delete_column',
+  ENABLE_RESET: 'enable_reset',
 });
 
 export const DataTypes = Object.freeze({
-  NUMBER: "number",
-  TEXT: "text",
-  SELECT: "select"
+  NUMBER: 'number',
+  TEXT: 'text',
+  SELECT: 'select',
 });

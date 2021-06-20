@@ -17,9 +17,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
   },
   "devDependencies": {
+    "husky": "^6.0.0",
+    "prettier": "^2.3.1",
     "react-scripts": "latest"
   },
   "browserslist": {
@@ -39,5 +44,10 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"[Husky] pre-commit\""
+    }
   }
 }
