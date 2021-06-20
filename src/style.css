@@ -255,6 +255,10 @@ html {
   display: flex;
 }
 
+.d-inline-block {
+  display: inline-block;
+}
+
 .cursor-default {
   cursor: default;
 }
@@ -283,10 +287,78 @@ html {
   font-weight: 600;
 }
 
+.font-weight-400 {
+  font-weight: 400;
+}
+
 .font-size-75 {
   font-size: 0.75rem;
 }
 
 .flex-1 {
   flex: 1;
+}
+
+.mt-5 {
+  margin-top: 0.5rem;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-5 {
+  margin-right: 0.5rem;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.list-padding {
+  padding: 4px 0px;
+}
+
+.bg-grey-200 {
+  background-color: #eeeeee;
+}
+
+.color-grey-800 {
+  color: #424242;
+}
+
+.color-grey-600 {
+  color: #757575;
+}
+
+.color-grey-500 {
+  color: #9e9e9e;
+}
+
+.border-radius-sm {
+  border-radius: 4px;
+}
+
+.text-transform-uppercase {
+  text-transform: uppercase;
+}
+
+.text-transform-capitalize {
+  text-transform: capitalize;
 }

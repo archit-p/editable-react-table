@@ -120,8 +120,7 @@ export default function Cell({value: initialValue, row: {index}, column: {id, da
               <div className='d-flex flex-wrap-wrap' style={{marginTop: "-0.5rem"}}>
                 {options.map((option) => (
                   <div
-                    className='cursor-pointer'
-                    style={{marginRight: "0.5rem", marginTop: "0.5rem"}}
+                    className='cursor-pointer mr-5 mt-5'
                     onClick={() => {
                       setValue({value: option.label, update: true});
                       setShowSelect(false);
@@ -131,13 +130,10 @@ export default function Cell({value: initialValue, row: {index}, column: {id, da
                 ))}
                 {showAdd && (
                   <div
+                    className='mr-5 mt-5 bg-grey-200 border-radius-sm'
                     style={{
-                      marginRight: "0.5rem",
-                      marginTop: "0.5rem",
                       width: 120,
-                      padding: "2px 4px",
-                      backgroundColor: grey(200),
-                      borderRadius: 4
+                      padding: "2px 4px"
                     }}>
                     <input
                       type='text'
@@ -148,10 +144,7 @@ export default function Cell({value: initialValue, row: {index}, column: {id, da
                     />
                   </div>
                 )}
-                <div
-                  className='cursor-pointer'
-                  style={{marginRight: "0.5rem", marginTop: "0.5rem"}}
-                  onClick={handleAddOption}>
+                <div className='cursor-pointer mr-5 mt-5' onClick={handleAddOption}>
                   <Relationship
                     value={
                       <span className='svg-icon-sm svg-text'>

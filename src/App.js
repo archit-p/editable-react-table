@@ -3,7 +3,6 @@ import "./style.css";
 import makeData from "./makeData";
 import Table from "./Table";
 import {randomColor, shortId} from "./utils";
-import {grey} from "./colors";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -199,25 +198,23 @@ function App() {
 
   return (
     <div
+      className='overflow-x-hidden'
       style={{
         width: "100vw",
-        height: "100vh",
-        overflowX: "hidden"
+        height: "100vh"
       }}>
-      <div
-        style={{height: 120, display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
-        <h1 style={{color: grey(800)}}>Editable React Table</h1>
+      <div className='d-flex justify-content-center flex-column align-items-center' style={{height: 120}}>
+        <h1 className="color-grey-800">Editable React Table</h1>
       </div>
-      <div style={{overflow: "auto", display: "flex"}}>
-        <div style={{flex: "1 1 auto", padding: "1rem", maxWidth: 1000, marginLeft: "auto", marginRight: "auto"}}>
+      <div className='d-flex overflow-auto'>
+        <div className='cell-padding ml-auto mr-auto' style={{flex: "1 1 auto", maxWidth: 1000}}>
           <Table columns={state.columns} data={state.data} dispatch={dispatch} skipReset={state.skipReset} />
         </div>
       </div>
-      <div
-        style={{height: 140, display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
-        <p style={{color: grey(600)}}>
+      <div className='d-flex justify-content-center flex-column align-items-center' style={{height: 140}}>
+        <p className='font-weight-600 color-grey-600'>
           Built by{" "}
-          <a href='https://twitter.com/thesysarch' style={{color: grey(600), fontWeight: 600}}>
+          <a href='https://twitter.com/thesysarch' className="color-grey-600">
             @thesysarch
           </a>
         </p>

@@ -6,7 +6,7 @@ import ArrowDownIcon from "./img/ArrowDown";
 import ArrowLeftIcon from "./img/ArrowLeft";
 import ArrowRightIcon from "./img/ArrowRight";
 import TrashIcon from "./img/Trash";
-import TextIcon from "./Text";
+import TextIcon from "./img/Text";
 import MultiIcon from "./img/Multi";
 import HashIcon from "./img/Hash";
 import PlusIcon from "./img/Plus";
@@ -162,7 +162,7 @@ export default function Header({
 
   return id !== 999999 ? (
     <>
-      <div {...getHeaderProps({style: {display: "inline-block"}})} className='th noselect'>
+      <div {...getHeaderProps()} className='th noselect d-inline-block'>
         <div className='th-content' onClick={() => setExpanded(true)} ref={setReferenceElement}>
           <span className='svg-icon svg-gray icon-margin'>{propertyIcon}</span>
           {label}
@@ -190,11 +190,11 @@ export default function Header({
                   onKeyDown={handleKeyDown}
                 />
               </div>
-              <span className='font-weight-600 font-size-75' style={{textTransform: "uppercase", color: grey(500)}}>
+              <span className='font-weight-600 font-size-75 color-grey-500 text-transform-uppercase'>
                 Property Type
               </span>
             </div>
-            <div style={{padding: "4px 0px"}}>
+            <div className='list-padding'>
               <button
                 className='sort-button'
                 type='button'
@@ -202,11 +202,11 @@ export default function Header({
                 onMouseLeave={() => setShowType(false)}
                 ref={setTypeReferenceElement}>
                 <span className='svg-icon svg-text icon-margin'>{propertyIcon}</span>
-                <span style={{textTransform: "capitalize"}}>{dataType}</span>
+                <span className="text-transform-capitalize">{dataType}</span>
               </button>
               {showType && (
                 <div
-                  className='shadow-5 bg-white border-radius-m'
+                  className='shadow-5 bg-white border-radius-md list-padding'
                   ref={setTypePopperElement}
                   onMouseEnter={() => setShowType(true)}
                   onMouseLeave={() => setShowType(false)}
@@ -215,8 +215,7 @@ export default function Header({
                     ...typePopper.styles.popper,
                     width: 200,
                     backgroundColor: "white",
-                    zIndex: 4,
-                    padding: "4px 0px"
+                    zIndex: 4
                   }}>
                   {types.map((type) => (
                     <button className='sort-button' onClick={type.onClick}>
@@ -228,10 +227,10 @@ export default function Header({
               )}
             </div>
             <div
+              className='list-padding'
               key={shortId()}
               style={{
-                borderTop: `2px solid ${grey(200)}`,
-                padding: "4px 0px"
+                borderTop: `2px solid ${grey(200)}`
               }}>
               {buttons.map((button) => (
                 <button type='button' className='sort-button' onMouseDown={button.onClick}>
@@ -245,10 +244,9 @@ export default function Header({
       )}
     </>
   ) : (
-    <div {...getHeaderProps({style: {display: "inline-block"}})} className='th noselect'>
+    <div {...getHeaderProps()} className='th noselect d-inline-block'>
       <div
-        className='th-content'
-        style={{display: "flex", justifyContent: "center"}}
+        className='th-content d-flex justify-content-center'
         onClick={(e) => dataDispatch({type: "add_column_to_left", columnId: 999999, focus: true})}>
         <span className='svg-icon-sm svg-gray'>
           <PlusIcon />
