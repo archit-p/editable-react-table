@@ -35,12 +35,13 @@ npm start
 
 ### Contributions
 
-Contributions are welcome!
+Contributions are welcome! Feel free to pick an item from the roadmap below or open a fresh issue!
 
-Possible ideas:
+### Roadmap
 
-- Adding support for virtualized rows
-- Adding data types for date, multi-select and checkbox
-- Animating dropdowns
-
-If you're interested in working on any of these, get in touch!
+- [x] Support for virtualized rows
+- [ ] Date data-type
+- [ ] Multi-Select data-type
+- [ ] Checkbox data-type
+- [ ] Animating dropdowns
+- [ ] Performance - supporting 100000 rows
