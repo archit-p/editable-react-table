@@ -165,6 +165,7 @@ html {
   align-items: center;
   font-size: 0.875rem;
   cursor: pointer;
+  height: 50px;
 }
 
 .add-row:hover {
@@ -188,6 +189,7 @@ html {
   padding: 0.5rem;
   display: flex;
   align-items: center;
+  height: 50px;
 }
 
 .td {
@@ -204,9 +206,8 @@ html {
 }
 
 .table {
+  display: inline-block;
   border-spacing: 0;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
 }
 
 .th:last-child {
@@ -328,8 +329,8 @@ html {
   overflow: auto;
 }
 
-.overflow-x-hidden {
-  overflow-x: hidden;
+.overflow-y-hidden {
+  overflow-y: hidden;
 }
 
 .list-padding {

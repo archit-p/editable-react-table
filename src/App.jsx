@@ -185,7 +185,7 @@ function reducer(state, action) {
 }
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, makeData(10));
+  const [state, dispatch] = useReducer(reducer, makeData(1000));
 
   useEffect(() => {
     dispatch({ type: ActionTypes.ENABLE_RESET });
@@ -193,42 +193,18 @@ function App() {
 
   return (
     <div
-      className="overflow-x-hidden"
+      className="overflow-y-hidden"
       style={{
         width: '100vw',
         height: '100vh',
       }}
     >
-      <div
-        className="d-flex justify-content-center flex-column align-items-center"
-        style={{ height: 120 }}
-      >
-        <h1 className="color-grey-800">Editable React Table</h1>
-      </div>
-      <div className="d-flex overflow-auto">
-        <div
-          className="cell-padding ml-auto mr-auto"
-          style={{ flex: '1 1 auto', maxWidth: 1000 }}
-        >
-          <Table
-            columns={state.columns}
-            data={state.data}
-            dispatch={dispatch}
-            skipReset={state.skipReset}
-          />
-        </div>
-      </div>
-      <div
-        className="d-flex justify-content-center flex-column align-items-center"
-        style={{ height: 140 }}
-      >
-        <p className="font-weight-600 color-grey-600">
-          Built by{' '}
-          <a href="https://twitter.com/thesysarch" className="color-grey-600">
-            @thesysarch
-          </a>
-        </p>
-      </div>
+      <Table
+        columns={state.columns}
+        data={state.data}
+        dispatch={dispatch}
+        skipReset={state.skipReset}
+      />
     </div>
   );
 }
