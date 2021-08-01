@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import clsx from 'clsx';
 import {
   useTable,
-  useFlexLayout,
+  useBlockLayout,
   useResizeColumns,
   useSortBy,
 } from 'react-table';
@@ -10,6 +10,8 @@ import Cell from './Cell';
 import Header from './Header';
 import PlusIcon from './img/Plus';
 import { ActionTypes } from './utils';
+import { FixedSizeList } from 'react-window';
+import scrollbarWidth from './scrollbarWidth';
 
 const defaultColumn = {
   minWidth: 50,
@@ -49,22 +51,45 @@ export default function Table({
     []
   );
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable(
-      {
-        columns,
-        data,
-        defaultColumn,
-        dataDispatch,
-        autoResetSortBy: !skipReset,
-        autoResetFilters: !skipReset,
-        autoResetRowState: !skipReset,
-        sortTypes,
-      },
-      useFlexLayout,
-      useResizeColumns,
-      useSortBy
-    );
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+    totalColumnsWidth,
+  } = useTable(
+    {
+      columns,
+      data,
+      defaultColumn,
+      dataDispatch,
+      autoResetSortBy: !skipReset,
+      autoResetFilters: !skipReset,
+      autoResetRowState: !skipReset,
+      sortTypes,
+    },
+    useBlockLayout,
+    useResizeColumns,
+    useSortBy
+  );
+
+  const RenderRow = React.useCallback(
+    ({ index, style }) => {
+      const row = rows[index];
+      prepareRow(row);
+      return (
+        <div {...row.getRowProps({ style })} className="tr">
+          {row.cells.map(cell => (
+            <div {...cell.getCellProps()} className="td">
+              {cell.render('Cell')}
+            </div>
+          ))}
+        </div>
+      );
+    },
+    [prepareRow, rows]
+  );
 
   function isTableResizing() {
     for (let headerGroup of headerGroups) {
@@ -92,18 +117,14 @@ export default function Table({
           ))}
         </div>
         <div {...getTableBodyProps()}>
-          {rows.map((row, i) => {
-            prepareRow(row);
-            return (
-              <div {...row.getRowProps()} className="tr">
-                {row.cells.map(cell => (
-                  <div {...cell.getCellProps()} className="td">
-                    {cell.render('Cell')}
-                  </div>
-                ))}
-              </div>
-            );
-          })}
+          <FixedSizeList
+            height={window.innerHeight - 100}
+            itemCount={rows.length}
+            itemSize={35}
+            width={totalColumnsWidth + scrollbarWidth}
+          >
+            {RenderRow}
+          </FixedSizeList>
           <div
             className="tr add-row"
             onClick={() => dataDispatch({ type: ActionTypes.ADD_ROW })}
