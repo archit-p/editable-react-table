@@ -120,7 +120,7 @@ export default function Table({
           <FixedSizeList
             height={window.innerHeight - 100}
             itemCount={rows.length}
-            itemSize={35}
+            itemSize={40}
             width={totalColumnsWidth + scrollbarWidth}
           >
             {RenderRow}
