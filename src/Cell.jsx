@@ -5,6 +5,7 @@ import { usePopper } from 'react-popper';
 import { grey } from './colors';
 import PlusIcon from './img/Plus';
 import { ActionTypes, DataTypes, randomColor } from './utils';
+import { createPortal } from 'react-dom';
 
 export default function Cell({
   value: initialValue,
@@ -102,67 +103,71 @@ export default function Cell({
             {showSelect && (
               <div className="overlay" onClick={() => setShowSelect(false)} />
             )}
-            {showSelect && (
-              <div
-                className="shadow-5 bg-white border-radius-md"
-                ref={setSelectPop}
-                {...attributes.popper}
-                style={{
-                  ...styles.popper,
-                  zIndex: 4,
-                  minWidth: 200,
-                  maxWidth: 320,
-                  padding: '0.75rem',
-                }}
-              >
+            {showSelect &&
+              createPortal(
                 <div
-                  className="d-flex flex-wrap-wrap"
-                  style={{ marginTop: '-0.5rem' }}
+                  className="shadow-5 bg-white border-radius-md"
+                  ref={setSelectPop}
+                  {...attributes.popper}
+                  style={{
+                    ...styles.popper,
+                    zIndex: 4,
+                    minWidth: 200,
+                    maxWidth: 320,
+                    maxHeight: 400,
+                    padding: '0.75rem',
+                    overflow: 'auto',
+                  }}
                 >
-                  {options.map(option => (
+                  <div
+                    className="d-flex flex-wrap-wrap"
+                    style={{ marginTop: '-0.5rem' }}
+                  >
+                    {options.map(option => (
+                      <div
+                        className="cursor-pointer mr-5 mt-5"
+                        onClick={() => handleOptionClick(option)}
+                      >
+                        <Badge
+                          value={option.label}
+                          backgroundColor={option.backgroundColor}
+                        />
+                      </div>
+                    ))}
+                    {showAdd && (
+                      <div
+                        className="mr-5 mt-5 bg-grey-200 border-radius-sm"
+                        style={{
+                          width: 120,
+                          padding: '2px 4px',
+                        }}
+                      >
+                        <input
+                          type="text"
+                          className="option-input"
+                          onBlur={handleOptionBlur}
+                          ref={setAddSelectRef}
+                          onKeyDown={handleOptionKeyDown}
+                        />
+                      </div>
+                    )}
                     <div
                       className="cursor-pointer mr-5 mt-5"
-                      onClick={() => handleOptionClick(option)}
+                      onClick={handleAddOption}
                     >
                       <Badge
-                        value={option.label}
-                        backgroundColor={option.backgroundColor}
+                        value={
+                          <span className="svg-icon-sm svg-text">
+                            <PlusIcon />
+                          </span>
+                        }
+                        backgroundColor={grey(200)}
                       />
                     </div>
-                  ))}
-                  {showAdd && (
-                    <div
-                      className="mr-5 mt-5 bg-grey-200 border-radius-sm"
-                      style={{
-                        width: 120,
-                        padding: '2px 4px',
-                      }}
-                    >
-                      <input
-                        type="text"
-                        className="option-input"
-                        onBlur={handleOptionBlur}
-                        ref={setAddSelectRef}
-                        onKeyDown={handleOptionKeyDown}
-                      />
-                    </div>
-                  )}
-                  <div
-                    className="cursor-pointer mr-5 mt-5"
-                    onClick={handleAddOption}
-                  >
-                    <Badge
-                      value={
-                        <span className="svg-icon-sm svg-text">
-                          <PlusIcon />
-                        </span>
-                      }
-                      backgroundColor={grey(200)}
-                    />
                   </div>
-                </div>
-              </div>
-            )}
+                </div>,
+                document.querySelector('#popper-portal')
+              )}
           </>
         );
       default:

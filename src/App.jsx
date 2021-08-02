@@ -205,6 +205,7 @@ function App() {
         dispatch={dispatch}
         skipReset={state.skipReset}
       />
+      <div id="popper-portal"></div>
     </div>
   );
 }
