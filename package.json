@@ -1,7 +1,29 @@
 {
-  "name": "react",
-  "version": "0.0.0",
-  "private": true,
+  "name": "editable-react-table",
+  "version": "0.1.0",
+  "description": "Editable React table component",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "table",
+    "crud",
+    "component"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koyal-tech/editable-react-table"
+  },
+  "homepage": "https://github.com/archit-p/editable-react-table",
+  "bugs": {
+    "url": "https://github.com/archit-p/editable-react-table/issues"
+  },
+  "author": "jeff-r-koyaltech",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "dependencies": {
     "@popperjs/core": "^2.0.0",
     "clsx": "1.1.1",
@@ -18,6 +40,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
+    "publish": "npm publish",
     "prepare": "husky install",
     "lint": "prettier --check .",
     "format": "prettier --write ."
