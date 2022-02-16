@@ -94,3 +94,11 @@ export const DataTypes = Object.freeze({
   TEXT: 'text',
   SELECT: 'select',
 });
+
+export default {
+  shortId,
+  randomColor,
+  makeData,
+  ActionTypes,
+  DataTypes,
+};
