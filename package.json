@@ -1,6 +1,6 @@
 {
   "name": "@koyal-tech/editable-react-table",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Editable React table component",
   "license": "MIT",
   "keywords": [
@@ -18,8 +18,7 @@
     "url": "https://github.com/koyal-tech/editable-react-table/issues"
   },
   "author": "koyaltech",
-  "main": "dist/index.js",
-  "module": "dist/editable-react-table.es.js",
+  "module": "dist/index.js",
   "files": [
     "dist",
     "README.md"
@@ -30,6 +29,7 @@
     "react-dom": "^17.0.0"
   },
   "scripts": {
+    "local-dev-init": "npm link",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "publish": "npm publish --access=public"

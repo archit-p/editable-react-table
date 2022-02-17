@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { Badge } from '@koyal-tech/editable-react-table';
 
 function App() {
   return (
@@ -9,15 +10,12 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <div>
+        <h2>Component Gallery</h2>
+        <Badge value="Badge tag example" backgroundColor="#bdbdbd" />
+        
+      </div>
     </div>
   );
 }
