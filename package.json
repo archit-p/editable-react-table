@@ -18,6 +18,7 @@
     "url": "https://github.com/koyal-tech/editable-react-table/issues"
   },
   "author": "koyaltech",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
     "dist",
@@ -46,7 +47,6 @@
     "@rollup/plugin-url": "^6.1.0",
     "clsx": "1.1.1",
     "create-react-app": "^5.0.0",
-    "faker": "^5.5.3",
     "immutability-helper": "^3.1.1",
     "postcss": "^8.4.6",
     "react": "17.0.2",
