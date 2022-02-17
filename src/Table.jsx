@@ -6,6 +6,7 @@ import {
   useResizeColumns,
   useSortBy,
 } from 'react-table';
+import './style.css';
 import Cell from './Cell.jsx';
 import Header from './Header.jsx';
 import PlusIcon from './img/Plus.jsx';

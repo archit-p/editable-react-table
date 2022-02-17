@@ -1,6 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
-import './style.css';
-import Table from './Table';
+import Table from './Table.jsx';
 import {
   randomColor,
   shortId,
@@ -122,9 +121,7 @@ function reducer(state, action) {
         },
       });
     case ActionTypes.ADD_COLUMN_TO_LEFT:
-      const leftIndex = state.columns.findIndex(
-        column => column.id === action.columnId
-      );
+      const leftIndex = state.columns.findIndex(column => column.id === action.columnId);
       let leftId = shortId();
       return update(state, {
         skipReset: { $set: true },
@@ -184,8 +181,8 @@ function reducer(state, action) {
   }
 }
 
-function App() {
-  const [state, dispatch] = useReducer(reducer, makeData(1000));
+function TableWrapper({ initialState }) {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     dispatch({ type: ActionTypes.ENABLE_RESET });
@@ -210,4 +207,4 @@ function App() {
   );
 }
 
-export default App;
+export default TableWrapper;
