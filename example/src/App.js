@@ -13,7 +13,6 @@ const {
 
 function App() {
   const tableWrapperRandomInitState = makeData(100);
-
   return (
     <div className="App">
       <header className="App-header">
@@ -25,7 +24,7 @@ function App() {
       <div>
         <h2>Component Gallery</h2>
         <Badge value="Badge tag example" backgroundColor="#bdbdbd" />
-        <TableWrapper initialState="tableWrapperRandomInitState" />
+        <TableWrapper initialState={tableWrapperRandomInitState} />
       </div>
     </div>
   );

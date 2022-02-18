@@ -1,6 +1,6 @@
 {
   "name": "@koyal-tech/editable-react-table",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Editable React table component",
   "license": "MIT",
   "keywords": [
@@ -19,7 +19,7 @@
   },
   "author": "koyaltech",
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "dist/index.es.js",
   "files": [
     "dist",
     "README.md"
