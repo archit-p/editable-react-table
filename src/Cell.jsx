@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ContentEditable from 'react-contenteditable';
-import Badge from './Badge';
+import Badge from './Badge.jsx';
 import { usePopper } from 'react-popper';
 import { grey } from './colors';
-import PlusIcon from './img/Plus';
+import PlusIcon from './img/Plus.jsx';
 import { ActionTypes, DataTypes, randomColor } from './utils';
 import { createPortal } from 'react-dom';
 
