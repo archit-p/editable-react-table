@@ -1,31 +1,17 @@
-import { Badge, TableWrapper, utils } from '@koyal-tech/editable-react-table';
-
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
-const {
-  randomColor,
-  shortId,
-  makeData,
-  ActionTypes,
-  DataTypes,
-} = utils;
+import MockComponentGallery from './components/poc/MockComponentGallery';
 
 function App() {
-  const tableWrapperRandomInitState = makeData(100);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-      <div>
-        <h2>Component Gallery</h2>
-        <Badge value="Badge tag example" backgroundColor="#bdbdbd" />
-        <TableWrapper initialState={tableWrapperRandomInitState} />
-      </div>
+      
+      <h1>Sample App</h1>
+      <nav style={{ borderBottom: 'solid 1px', paddingBottom: '1rem' }}>
+        <a href="https://github.com/koyal-tech/editable-react-table" target="_blank">Source</a> |{' '}
+      </nav>
+      <MockComponentGallery />
     </div>
   );
 }
