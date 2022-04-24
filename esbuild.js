@@ -15,6 +15,9 @@ require("esbuild")
       inject: "#root",
       v2: true
     })],
+    loader: {
+      ".css": "text"
+    },
     jsx: "transform",
   })
   .catch(() => process.exit(1));
