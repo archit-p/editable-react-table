@@ -178,9 +178,6 @@ html {
   margin: 0px;
   padding: 0px;
 }
-`
-
-export const StyledTable = styled(Table)`
 
 .transition-fade-enter {
   opacity: 0;
@@ -507,4 +504,7 @@ export const StyledTable = styled(Table)`
   text-transform: capitalize;
 }
 
+`
+
+export const StyledTable = styled(Table)`
 `
