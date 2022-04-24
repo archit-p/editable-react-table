@@ -994,6 +994,27 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@parcel/css-darwin-arm64@1.7.3":
+  "integrity" "sha512-m3HDY+Rh8HJxmLELKAvCpF59vLS7FWtgBODHxl8G9Jl2CnGtXpXvdpyeMxNsTE+2QuPC+a5QT7IeZAKb2Gjmxg=="
+  "resolved" "https://registry.npmjs.org/@parcel/css-darwin-arm64/-/css-darwin-arm64-1.7.3.tgz"
+  "version" "1.7.3"
+
+"@parcel/css@1.7.3":
+  "integrity" "sha512-rgdRX4Uk31EvzH/mUScL0wdXtkci3U5N1W2pgam+9S10vQy4uONhWBepZ1tUCjONHLacGXr1jp3LbG/HI7LiTw=="
+  "resolved" "https://registry.npmjs.org/@parcel/css/-/css-1.7.3.tgz"
+  "version" "1.7.3"
+  dependencies:
+    "detect-libc" "^1.0.3"
+  optionalDependencies:
+    "@parcel/css-darwin-arm64" "1.7.3"
+    "@parcel/css-darwin-x64" "1.7.3"
+    "@parcel/css-linux-arm-gnueabihf" "1.7.3"
+    "@parcel/css-linux-arm64-gnu" "1.7.3"
+    "@parcel/css-linux-arm64-musl" "1.7.3"
+    "@parcel/css-linux-x64-gnu" "1.7.3"
+    "@parcel/css-linux-x64-musl" "1.7.3"
+    "@parcel/css-win32-x64-msvc" "1.7.3"
+
 "@popperjs/core@^2.0.0":
   "integrity" "sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA=="
   "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.2.tgz"
@@ -1515,6 +1536,11 @@
   dependencies:
     "object-keys" "^1.0.12"
 
+"detect-libc@^1.0.3":
+  "integrity" "sha1-+hN8S9aY7fVc1c0CrFWfkaTEups="
+  "resolved" "https://registry.npmjs.org/detect-libc/-/detect-libc-1.0.3.tgz"
+  "version" "1.0.3"
+
 "dom-serializer@^1.0.1":
   "integrity" "sha512-5c54Bk5Dw4qAxNOI1pFEizPSjVsx5+bpJKmL2kPn8JhBUq2q09tTCa3mjijun2NfK78NMouDYNMBkOrPZiS+ig=="
   "resolved" "https://registry.npmjs.org/dom-serializer/-/dom-serializer-1.3.2.tgz"
@@ -1572,12 +1598,24 @@
   "resolved" "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-0.9.3.tgz"
   "version" "0.9.3"
 
+"esbuild-css-modules-plugin@^2.2.15":
+  "integrity" "sha512-iuwDmuJUJYoPF6/sbIDmVCtsXWnx2SyLjumLX+oxK180wtodU6F9NnpQnVx0eqTGof6JkuQ3ZeDYmZzaT0Bwdw=="
+  "resolved" "https://registry.npmjs.org/esbuild-css-modules-plugin/-/esbuild-css-modules-plugin-2.2.15.tgz"
+  "version" "2.2.15"
+  dependencies:
+    "@parcel/css" "1.7.3"
+    "fs-extra" "^10.0.1"
+    "lodash" "^4.17.21"
+    "postcss" "^8.4.12"
+    "postcss-modules" "^4.3.1"
+    "tmp" "^0.2.1"
+
 "esbuild-darwin-arm64@0.14.38":
   "integrity" "sha512-eqF+OejMI3mC5Dlo9Kdq/Ilbki9sQBw3QlHW3wjLmsLh+quNfHmGMp3Ly1eWm981iGBMdbtSS9+LRvR2T8B3eQ=="
   "resolved" "https://registry.npmjs.org/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.14.38.tgz"
   "version" "0.14.38"
 
-"esbuild@^0.14.38", "esbuild@>=0.10.1":
+"esbuild@^0.14.27", "esbuild@^0.14.38", "esbuild@>=0.10.1":
   "integrity" "sha512-12fzJ0fsm7gVZX1YQ1InkOE5f9Tl7cgf6JPYXRJtPIoE0zkWAbHdPHVPPaLi9tYAcEBqheGzqLn/3RdTOyBfcA=="
   "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.14.38.tgz"
   "version" "0.14.38"
@@ -1643,10 +1681,10 @@
   "resolved" "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
   "version" "3.1.3"
 
-"fs-extra@^10.0.0":
-  "integrity" "sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ=="
-  "resolved" "https://registry.npmjs.org/fs-extra/-/fs-extra-10.0.0.tgz"
-  "version" "10.0.0"
+"fs-extra@^10.0.0", "fs-extra@^10.0.1":
+  "integrity" "sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ=="
+  "resolved" "https://registry.npmjs.org/fs-extra/-/fs-extra-10.1.0.tgz"
+  "version" "10.1.0"
   dependencies:
     "graceful-fs" "^4.2.0"
     "jsonfile" "^6.0.1"
@@ -1919,7 +1957,7 @@
   "resolved" "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   "version" "4.5.0"
 
-"lodash@^4.17.11":
+"lodash@^4.17.11", "lodash@^4.17.21":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -1996,7 +2034,7 @@
   "resolved" "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
   "version" "2.1.2"
 
-"nanoid@^3.2.0":
+"nanoid@^3.3.1":
   "integrity" "sha512-n6Vs/3KGyxPQd6uO0eH4Bv0ojGSUvuLlIHtC3Y0kEO23YRge8H9x1GCzLn28YX0H66pMkxuaeESFq4tKISKwdw=="
   "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.3.1.tgz"
   "version" "3.3.1"
@@ -2226,10 +2264,10 @@
   dependencies:
     "icss-utils" "^5.0.0"
 
-"postcss-modules@^4.0.0":
-  "integrity" "sha512-zoUttLDSsbWDinJM9jH37o7hulLRyEgH6fZm2PchxN7AZ8rkdWiALyNhnQ7+jg7cX9f10m6y5VhHsrjO0Mf/DA=="
-  "resolved" "https://registry.npmjs.org/postcss-modules/-/postcss-modules-4.3.0.tgz"
-  "version" "4.3.0"
+"postcss-modules@^4.0.0", "postcss-modules@^4.3.1":
+  "integrity" "sha512-ItUhSUxBBdNamkT3KzIZwYNNRFKmkJrofvC2nWab3CPKhYBQ1f27XXh1PAPE27Psx58jeelPsxWB/+og+KEH0Q=="
+  "resolved" "https://registry.npmjs.org/postcss-modules/-/postcss-modules-4.3.1.tgz"
+  "version" "4.3.1"
   dependencies:
     "generic-names" "^4.0.0"
     "icss-replace-symbols" "^1.1.0"
@@ -2354,12 +2392,12 @@
   "resolved" "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz"
   "version" "4.2.0"
 
-"postcss@^8.0.0", "postcss@^8.0.9", "postcss@^8.1.0", "postcss@^8.2.15", "postcss@^8.2.2", "postcss@^8.4.6", "postcss@8.x":
-  "integrity" "sha512-OovjwIzs9Te46vlEx7+uXB0PLijpwjXGKXjVGGPIGubGpq7uh5Xgf6D6FiJ/SzJMBosHDp6a2hiXOS97iBXcaA=="
-  "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.6.tgz"
-  "version" "8.4.6"
+"postcss@^8.0.0", "postcss@^8.0.9", "postcss@^8.1.0", "postcss@^8.2.15", "postcss@^8.2.2", "postcss@^8.4.12", "postcss@^8.4.6", "postcss@8.x":
+  "integrity" "sha512-lg6eITwYe9v6Hr5CncVbK70SoioNQIq81nsaG86ev5hAidQvmOeETBqs7jm43K2F5/Ley3ytDtriImV6TpNiSg=="
+  "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.12.tgz"
+  "version" "8.4.12"
   dependencies:
-    "nanoid" "^3.2.0"
+    "nanoid" "^3.3.1"
     "picocolors" "^1.0.0"
     "source-map-js" "^1.0.2"
 
@@ -2438,11 +2476,13 @@
     "@babel/runtime" "^7.0.0"
     "memoize-one" ">=3.1.1 <6"
 
-"react@^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17", "react@^16.8.3 || ^17.0.0-0", "react@>= 16.8.0", "react@>=16.3", "react@17.0.2", "react@file:../carmen/node_modules/react":
-  "resolved" "file:../carmen/node_modules/react"
-  "version" "18.0.0"
+"react@^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17", "react@^16.8.3 || ^17.0.0-0", "react@>= 16.8.0", "react@>=16.3", "react@17.0.2":
+  "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
+  "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
+  "version" "17.0.2"
   dependencies:
     "loose-envify" "^1.1.0"
+    "object-assign" "^4.1.1"
 
 "readable-stream@^2.1.4":
   "integrity" "sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw=="

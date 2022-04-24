@@ -1,3 +1,4 @@
+import styles from "./style.css";
 import React, { useEffect, useReducer } from 'react';
 import {GlobalStyle, StyledTable} from './Table';
 import {

@@ -31,8 +31,7 @@
   },
   "scripts": {
     "local-dev-init": "npm link",
-    "build": "rollup -c && tsc --emitDeclarationOnly --outDir dist",
-    "start": "rollup -c -w",
+    "build": "./esbuild.js && tsc --emitDeclarationOnly --outDir dist",
     "postinstall": "npm run build",
     "publish": "npm publish --access=public"
   },
@@ -50,6 +49,7 @@
     "clsx": "1.1.1",
     "create-react-app": "^5.0.0",
     "esbuild": "^0.14.38",
+    "esbuild-css-modules-plugin": "^2.2.15",
     "immutability-helper": "^3.1.1",
     "postcss": "^8.4.6",
     "react": "17.0.2",
