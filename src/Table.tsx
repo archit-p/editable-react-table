@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import React, { useMemo } from 'react';
+import styled from 'styled-components'
 import clsx from 'clsx';
 import {
   useTable,
@@ -308,26 +308,6 @@ export const StyledTable = styled(Table)`
 
 .add-row:hover {
   background-color: #f5f5f5;
-}
-
-.th {
-  color: #9e9e9e;
-  font-weight: 500;
-  font-size: 0.875rem;
-  cursor: pointer;
-}
-
-.th:hover {
-  background-color: #f5f5f5;
-}
-
-.th-content {
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  height: 50px;
 }
 
 .td {

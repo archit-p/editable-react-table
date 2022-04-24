@@ -1,4 +1,5 @@
 import React, { useState, useEffect, ReactNode } from 'react';
+import styled from 'styled-components'
 import { usePopper } from 'react-popper';
 import { grey } from './colors';
 import ArrowUpIcon from './img/ArrowUp';
@@ -24,6 +25,31 @@ function getPropertyIcon(dataType): ReactNode {
       return null;
   }
 }
+
+const StyledTh = styled.div`
+color: #9e9e9e;
+font-weight: 500;
+font-size: 0.875rem;
+cursor: pointer;
+
+white-space: nowrap;
+margin: 0;
+border-bottom: 1px solid #e0e0e0;
+border-right: 1px solid #e0e0e0;
+position: relative;
+
+&:hover {
+  background-color: #f5f5f5;
+}
+
+& .th-content {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}`;
 
 export default function Header({
   column: { id, created, label, dataType, getResizerProps, getHeaderProps },
@@ -189,7 +215,7 @@ export default function Header({
     if (id !== 999999) {
       return (
         <>
-          <div {...getHeaderProps()} className="th noselect d-inline-block">
+          <StyledTh {...getHeaderProps()} className="th noselect d-inline-block">
             <div
               className="th-content"
               onClick={() => setExpanded(true)}
@@ -201,7 +227,7 @@ export default function Header({
               {label}
             </div>
             <div {...getResizerProps()} className="resizer" />
-          </div>
+          </StyledTh>
           {expanded && (
             <div className="overlay" onClick={() => setExpanded(false)} />
           )}

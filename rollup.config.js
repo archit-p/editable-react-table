@@ -4,6 +4,7 @@ import pkg from './package.json'
 
 export default {
   input: 'src/index.ts',
+  external: ["react", "react-dom", /node_modules/],
   output: [
     {
       file: pkg.main,
