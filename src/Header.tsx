@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
 import { usePopper } from 'react-popper';
 import { grey } from './colors';
 import ArrowUpIcon from './img/ArrowUp';
@@ -12,7 +12,7 @@ import HashIcon from './img/Hash';
 import PlusIcon from './img/Plus';
 import { ActionTypes, DataTypes, shortId } from './utils';
 
-function getPropertyIcon(dataType) {
+function getPropertyIcon(dataType): ReactNode {
   switch (dataType) {
     case DataTypes.NUMBER:
       return <HashIcon />;
@@ -249,7 +249,7 @@ export default function Header({
                     ref={setTypeReferenceElement}
                   >
                     <span className="svg-icon svg-text icon-margin">
-                      {getPropertyIcon}
+                      {getPropertyIcon(dataType)}
                     </span>
                     <span className="text-transform-capitalize">
                       {dataType}
