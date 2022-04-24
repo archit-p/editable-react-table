@@ -124,7 +124,7 @@ export default function Table({
     <>
       <div
         {...getTableProps()}
-        className={`${styles.table} ${styles.noselect} ${ clsx('table', isTableResizing() && 'noselect')}`}
+        className={`table ${styles.table} ${styles.noselect} ${ clsx('table', isTableResizing() && 'noselect')}`}
       >
         <div>
           {headerGroups.map(headerGroup => (

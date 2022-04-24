@@ -7,11 +7,14 @@ require("esbuild")
     external: ["react", "react-dom", "react", "react-contenteditable", "react-popper", "react-table", "react-window"],
     logLevel: "info",
     entryPoints: ["src/index.ts"],
+    outdir: "dist",
     target: "es2020",
     format: "cjs",
     bundle: true,
-    outfile: "dist/index.js",
-    plugins: [cssModulesPlugin()],
+    plugins: [cssModulesPlugin({
+      inject: "#root",
+      v2: true
+    })],
     jsx: "transform",
   })
   .catch(() => process.exit(1));
