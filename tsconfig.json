@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "jsx": "react",
+        "esModuleInterop": true
+    }
+}
