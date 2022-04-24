@@ -269,8 +269,8 @@ export default function Header({
                         zIndex: 4,
                       }}
                     >
-                      {types.map(type => (
-                        <button className="sort-button" onClick={type.onClick}>
+                      {types.map((type,idx) => (
+                        <button className="sort-button" onClick={type.onClick} key={idx}>
                           <span className="svg-icon svg-text icon-margin">
                             {type.icon}
                           </span>
@@ -287,8 +287,9 @@ export default function Header({
                     borderTop: `2px solid ${grey(200)}`,
                   }}
                 >
-                  {buttons.map(button => (
+                  {buttons.map((button,idx) => (
                     <button
+                      key={idx}
                       type="button"
                       className="sort-button"
                       onMouseDown={button.onClick}

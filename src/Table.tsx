@@ -23,6 +23,21 @@ const defaultColumn = {
   sortType: 'alphanumericFalsyLast',
 };
 
+const StyledTd = styled.div`
+overflow: hidden;
+color: #424242;
+align-items: stretch;
+padding: 0;
+display: flex;
+flex-direction: column;
+
+white-space: nowrap;
+margin: 0;
+border-bottom: 1px solid #e0e0e0;
+border-right: 1px solid #e0e0e0;
+position: relative;
+`
+
 export default function Table({
   columns,
   data,
@@ -82,9 +97,9 @@ export default function Table({
       return (
         <div {...row.getRowProps({ style })} className="tr">
           {row.cells.map(cell => (
-            <div {...cell.getCellProps()} className="td">
+            <StyledTd {...cell.getCellProps()} className="td">
               {cell.render('Cell')}
-            </div>
+            </StyledTd>
           ))}
         </div>
       );

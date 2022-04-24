@@ -21,7 +21,7 @@ export default {
     esbuild({
       // All options are optional
       include: /\.[jt]sx?$/, // default, inferred from `loaders` option
-      exclude: /node_modules/, // default
+      exclude: [/node_modules/, "react", "react-dom"], // default
       sourceMap: false, // by default inferred from rollup's `output.sourcemap` option
       minify: process.env.NODE_ENV === 'production',
       target: 'es2017', // default, or 'es20XX', 'esnext'
