@@ -1577,7 +1577,7 @@
   "resolved" "https://registry.npmjs.org/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.14.38.tgz"
   "version" "0.14.38"
 
-"esbuild@>=0.10.1":
+"esbuild@^0.14.38", "esbuild@>=0.10.1":
   "integrity" "sha512-12fzJ0fsm7gVZX1YQ1InkOE5f9Tl7cgf6JPYXRJtPIoE0zkWAbHdPHVPPaLi9tYAcEBqheGzqLn/3RdTOyBfcA=="
   "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.14.38.tgz"
   "version" "0.14.38"
@@ -2708,7 +2708,7 @@
   "resolved" "https://registry.npmjs.org/style-inject/-/style-inject-0.3.0.tgz"
   "version" "0.3.0"
 
-"styled-components@^5.3.5", "styled-components@>= 2":
+"styled-components@*", "styled-components@>= 2":
   "integrity" "sha512-ndETJ9RKaaL6q41B69WudeqLzOpY1A/ET/glXkNZ2T7dPjPqpPCXXQjDFYZWwNnE5co0wX+gTCqx9mfxTmSIPg=="
   "resolved" "https://registry.npmjs.org/styled-components/-/styled-components-5.3.5.tgz"
   "version" "5.3.5"
