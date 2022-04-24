@@ -1,4 +1,5 @@
 import React, { useState, useEffect, ReactNode } from 'react';
+import styles from "./style.css";
 import styled from 'styled-components'
 import { usePopper } from 'react-popper';
 import { grey } from './colors';
@@ -215,21 +216,21 @@ export default function Header({
     if (id !== 999999) {
       return (
         <>
-          <StyledTh {...getHeaderProps()} className="th noselect d-inline-block">
+          <StyledTh {...getHeaderProps()} className={`${styles.th} ${styles.noselect} ${styles["d-inline-block"]}`}>
             <div
-              className="th-content"
+              className={styles["th-content"]}
               onClick={() => setExpanded(true)}
               ref={setReferenceElement}
             >
-              <span className="svg-icon svg-gray icon-margin">
+              <span className={`${styles["svg-icon"]} ${styles["svg-gray"]} ${styles["icon-margin"]}`}>
                 {propertyIcon}
               </span>
               {label}
             </div>
-            <div {...getResizerProps()} className="resizer" />
+            <div {...getResizerProps()} className={styles.resizer} />
           </StyledTh>
           {expanded && (
-            <div className="overlay" onClick={() => setExpanded(false)} />
+            <div className={styles.overlay} onClick={() => setExpanded(false)} />
           )}
           {expanded && (
             <div
@@ -238,7 +239,7 @@ export default function Header({
               {...attributes.popper}
             >
               <div
-                className="bg-white shadow-5 border-radius-md"
+                className={`${styles["bg-white"]} ${styles["shadow-5"]} ${styles["border-radius-md"]}`}
                 style={{
                   width: 240,
                 }}
@@ -250,9 +251,9 @@ export default function Header({
                     paddingRight: '0.75rem',
                   }}
                 >
-                  <div className="is-fullwidth" style={{ marginBottom: 12 }}>
+                  <div className={styles["is-fullwidth"]} style={{ marginBottom: 12 }}>
                     <input
-                      className="form-input"
+                      className={styles["form-input"]}
                       ref={setInputRef}
                       type="text"
                       value={header}
@@ -262,28 +263,28 @@ export default function Header({
                       onKeyDown={handleKeyDown}
                     />
                   </div>
-                  <span className="font-weight-600 font-size-75 color-grey-500 text-transform-uppercase">
+                  <span className={"font-weight-600 font-size-75 color-grey-500 text-transform-uppercase".split(" ").map((n) => styles[n])}>
                     Property Type
                   </span>
                 </div>
-                <div className="list-padding">
+                <div className={styles["list-padding"]}>
                   <button
-                    className="sort-button"
+                    className={styles["sort-button"]}
                     type="button"
                     onMouseEnter={() => setShowType(true)}
                     onMouseLeave={() => setShowType(false)}
                     ref={setTypeReferenceElement}
                   >
-                    <span className="svg-icon svg-text icon-margin">
+                    <span className={"svg-icon svg-text icon-margin".split(" ").map((n) => styles[n])}>
                       {getPropertyIcon(dataType)}
                     </span>
-                    <span className="text-transform-capitalize">
+                    <span className={styles["text-transform-capitalize"]}>
                       {dataType}
                     </span>
                   </button>
                   {showType && (
                     <div
-                      className="shadow-5 bg-white border-radius-md list-padding"
+                      className={"shadow-5 bg-white border-radius-md list-padding".split(" ").map((n) => styles[n])}
                       ref={setTypePopperElement}
                       onMouseEnter={() => setShowType(true)}
                       onMouseLeave={() => setShowType(false)}
@@ -296,8 +297,8 @@ export default function Header({
                       }}
                     >
                       {types.map((type,idx) => (
-                        <button className="sort-button" onClick={type.onClick} key={idx}>
-                          <span className="svg-icon svg-text icon-margin">
+                        <button className={styles["sort-button"]} onClick={type.onClick} key={idx}>
+                          <span className={"svg-icon svg-text icon-margin".split(" ").map((n) => styles[n])}>
                             {type.icon}
                           </span>
                           {type.label}
@@ -307,7 +308,7 @@ export default function Header({
                   )}
                 </div>
                 <div
-                  className="list-padding"
+                  className={styles["list-padding"]}
                   key={shortId()}
                   style={{
                     borderTop: `2px solid ${grey(200)}`,
@@ -317,10 +318,10 @@ export default function Header({
                     <button
                       key={idx}
                       type="button"
-                      className="sort-button"
+                      className={styles["sort-button"]}
                       onMouseDown={button.onClick}
                     >
-                      <span className="svg-icon svg-text icon-margin">
+                      <span className={"svg-icon svg-text icon-margin".split(" ").map((n) => styles[n])}>
                         {button.icon}
                       </span>
                       {button.label}
@@ -334,9 +335,9 @@ export default function Header({
       );
     }
     return (
-      <div {...getHeaderProps()} className="th noselect d-inline-block">
+      <div {...getHeaderProps()} className={"th noselect d-inline-block".split(" ").map((n) => styles[n])}>
         <div
-          className="th-content d-flex justify-content-center"
+          className={"th-content d-flex justify-content-center".split(" ").map((n) => styles[n])}
           onClick={e =>
             dataDispatch({
               type: 'add_column_to_left',
@@ -345,7 +346,7 @@ export default function Header({
             })
           }
         >
-          <span className="svg-icon-sm svg-gray">
+          <span className={"svg-icon-sm svg-gray".split(" ").map((n) => styles[n])}>
             <PlusIcon />
           </span>
         </div>

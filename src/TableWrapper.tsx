@@ -1,4 +1,3 @@
-import styles from "./style.css";
 import React, { useEffect, useReducer } from 'react';
 import {GlobalStyle, StyledTable} from './Table';
 import {
@@ -183,6 +182,7 @@ function reducer(state, action) {
 }
 
 function TableWrapper({ initialState, dispatch: externalDispatch }) {
+  console.log("Same?",{one: (React as any).one})
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {

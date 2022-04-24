@@ -1,3 +1,4 @@
+import styles from "./style.css";
 import React, { useMemo } from 'react';
 import styled, { createGlobalStyle } from 'styled-components'
 import clsx from 'clsx';
@@ -95,9 +96,9 @@ export default function Table({
       const row = rows[index];
       prepareRow(row);
       return (
-        <div {...row.getRowProps({ style })} className="tr">
+        <div {...row.getRowProps({ style })} className={styles.tr}>
           {row.cells.map(cell => (
-            <StyledTd {...cell.getCellProps()} className="td">
+            <StyledTd {...cell.getCellProps()} className={styles.td}>
               {cell.render('Cell')}
             </StyledTd>
           ))}
@@ -123,11 +124,11 @@ export default function Table({
     <>
       <div
         {...getTableProps()}
-        className={clsx('table', isTableResizing() && 'noselect')}
+        className={`${styles.table} ${styles.noselect} ${ clsx('table', isTableResizing() && 'noselect')}`}
       >
         <div>
           {headerGroups.map(headerGroup => (
-            <div {...headerGroup.getHeaderGroupProps()} className="tr">
+            <div {...headerGroup.getHeaderGroupProps()} className={styles.tr}>
               {headerGroup.headers.map(column => column.render('Header'))}
             </div>
           ))}
@@ -142,10 +143,10 @@ export default function Table({
             {RenderRow}
           </FixedSizeList>
           <div
-            className="tr add-row"
+            className={`${styles.tr} ${styles["add-row"]}`}
             onClick={() => dataDispatch({ type: ActionTypes.ADD_ROW })}
           >
-            <span className="svg-icon svg-gray icon-margin">
+            <span className={`${styles["svg-icon"]} ${styles["svg-gray"]} ${styles["icon-margin"]}`}>
               <PlusIcon />
             </span>
             New
