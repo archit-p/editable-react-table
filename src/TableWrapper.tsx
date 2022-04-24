@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
-import {StyledTable} from './Table.jsx';
+import {StyledTable} from './Table';
 import {
   randomColor,
   shortId,

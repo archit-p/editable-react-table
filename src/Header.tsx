@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { usePopper } from 'react-popper';
 import { grey } from './colors';
-import ArrowUpIcon from './img/ArrowUp.jsx';
-import ArrowDownIcon from './img/ArrowDown.jsx';
-import ArrowLeftIcon from './img/ArrowLeft.jsx';
-import ArrowRightIcon from './img/ArrowRight.jsx';
-import TrashIcon from './img/Trash.jsx';
-import TextIcon from './img/Text.jsx';
-import MultiIcon from './img/Multi.jsx';
-import HashIcon from './img/Hash.jsx';
-import PlusIcon from './img/Plus.jsx';
+import ArrowUpIcon from './img/ArrowUp';
+import ArrowDownIcon from './img/ArrowDown';
+import ArrowLeftIcon from './img/ArrowLeft';
+import ArrowRightIcon from './img/ArrowRight';
+import TrashIcon from './img/Trash';
+import TextIcon from './img/Text';
+import MultiIcon from './img/Multi';
+import HashIcon from './img/Hash';
+import PlusIcon from './img/Plus';
 import { ActionTypes, DataTypes, shortId } from './utils';
 
 function getPropertyIcon(dataType) {

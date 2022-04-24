@@ -6,9 +6,9 @@ import {
   useResizeColumns,
   useSortBy,
 } from 'react-table';
-import Cell from './Cell.jsx';
-import Header from './Header.jsx';
-import PlusIcon from './img/Plus.jsx';
+import Cell from './Cell';
+import Header from './Header';
+import PlusIcon from './img/Plus';
 import { ActionTypes } from './utils';
 import { FixedSizeList } from 'react-window';
 import scrollbarWidth from './scrollbarWidth';
