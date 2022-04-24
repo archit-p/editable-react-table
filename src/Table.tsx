@@ -1,3 +1,4 @@
+import styles from "./style.css";
 import React, { useMemo } from 'react';
 import clsx from 'clsx';
 import {
@@ -13,6 +14,8 @@ import { ActionTypes } from './utils';
 import { FixedSizeList } from 'react-window';
 import scrollbarWidth from './scrollbarWidth';
 
+export const Style = ({ id }) => <style id={id} type="text/css">{styles}</style>
+
 const defaultColumn = {
   minWidth: 50,
   width: 150,
@@ -22,7 +25,7 @@ const defaultColumn = {
   sortType: 'alphanumericFalsyLast',
 };
 
-export default function Table({
+export function Table({
   columns,
   data,
   dispatch: dataDispatch,
@@ -94,7 +97,7 @@ export default function Table({
   function isTableResizing() {
     for (let headerGroup of headerGroups) {
       for (let column of headerGroup.headers) {
-        if (column.isResizing) {
+        if ((column as any).isResizing) {
           return true;
         }
       }
@@ -121,15 +124,15 @@ export default function Table({
             height={window.innerHeight - 100}
             itemCount={rows.length}
             itemSize={40}
-            width={totalColumnsWidth + scrollbarWidth}
+            width={totalColumnsWidth + scrollbarWidth()}
           >
             {RenderRow}
           </FixedSizeList>
           <div
-            className="tr add-row"
+            className={`tr add-row`}
             onClick={() => dataDispatch({ type: ActionTypes.ADD_ROW })}
           >
-            <span className="svg-icon svg-gray icon-margin">
+            <span className={`"svg-icon "svg-gray "icon-margin`}>
               <PlusIcon />
             </span>
             New

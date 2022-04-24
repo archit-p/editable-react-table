@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
+import styled from 'styled-components'
 import { usePopper } from 'react-popper';
 import { grey } from './colors';
 import ArrowUpIcon from './img/ArrowUp';
@@ -12,7 +13,7 @@ import HashIcon from './img/Hash';
 import PlusIcon from './img/Plus';
 import { ActionTypes, DataTypes, shortId } from './utils';
 
-function getPropertyIcon(dataType) {
+function getPropertyIcon(dataType): ReactNode {
   switch (dataType) {
     case DataTypes.NUMBER:
       return <HashIcon />;
@@ -24,6 +25,31 @@ function getPropertyIcon(dataType) {
       return null;
   }
 }
+
+const StyledTh = styled.div`
+color: #9e9e9e;
+font-weight: 500;
+font-size: 0.875rem;
+cursor: pointer;
+
+white-space: nowrap;
+margin: 0;
+border-bottom: 1px solid #e0e0e0;
+border-right: 1px solid #e0e0e0;
+position: relative;
+
+&:hover {
+  background-color: #f5f5f5;
+}
+
+& .th-content {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}`;
 
 export default function Header({
   column: { id, created, label, dataType, getResizerProps, getHeaderProps },
@@ -189,19 +215,19 @@ export default function Header({
     if (id !== 999999) {
       return (
         <>
-          <div {...getHeaderProps()} className="th noselect d-inline-block">
+          <StyledTh {...getHeaderProps()} className={`th noselect d-inline-block`}>
             <div
-              className="th-content"
+              className={"th-content"}
               onClick={() => setExpanded(true)}
               ref={setReferenceElement}
             >
-              <span className="svg-icon svg-gray icon-margin">
+              <span className={`svg-icon svg-gray icon-margin`}>
                 {propertyIcon}
               </span>
               {label}
             </div>
             <div {...getResizerProps()} className="resizer" />
-          </div>
+          </StyledTh>
           {expanded && (
             <div className="overlay" onClick={() => setExpanded(false)} />
           )}
@@ -212,7 +238,7 @@ export default function Header({
               {...attributes.popper}
             >
               <div
-                className="bg-white shadow-5 border-radius-md"
+                className={"bg-white shadow-5 border-radius-md"}
                 style={{
                   width: 240,
                 }}
@@ -224,9 +250,9 @@ export default function Header({
                     paddingRight: '0.75rem',
                   }}
                 >
-                  <div className="is-fullwidth" style={{ marginBottom: 12 }}>
+                  <div className={"is-fullwidth"} style={{ marginBottom: 12 }}>
                     <input
-                      className="form-input"
+                      className={"form-input"}
                       ref={setInputRef}
                       type="text"
                       value={header}
@@ -236,28 +262,28 @@ export default function Header({
                       onKeyDown={handleKeyDown}
                     />
                   </div>
-                  <span className="font-weight-600 font-size-75 color-grey-500 text-transform-uppercase">
+                  <span className={"font-weight-600 font-size-75 color-grey-500 text-transform-uppercase"}>
                     Property Type
                   </span>
                 </div>
-                <div className="list-padding">
+                <div className={"list-padding"}>
                   <button
-                    className="sort-button"
+                    className={"sort-button"}
                     type="button"
                     onMouseEnter={() => setShowType(true)}
                     onMouseLeave={() => setShowType(false)}
                     ref={setTypeReferenceElement}
                   >
-                    <span className="svg-icon svg-text icon-margin">
-                      {getPropertyIcon}
+                    <span className={"svg-icon svg-text icon-margin"}>
+                      {getPropertyIcon(dataType)}
                     </span>
-                    <span className="text-transform-capitalize">
+                    <span className={"text-transform-capitalize"}>
                       {dataType}
                     </span>
                   </button>
                   {showType && (
                     <div
-                      className="shadow-5 bg-white border-radius-md list-padding"
+                      className={"shadow-5 bg-white border-radius-md list-padding"}
                       ref={setTypePopperElement}
                       onMouseEnter={() => setShowType(true)}
                       onMouseLeave={() => setShowType(false)}
@@ -269,9 +295,9 @@ export default function Header({
                         zIndex: 4,
                       }}
                     >
-                      {types.map(type => (
-                        <button className="sort-button" onClick={type.onClick}>
-                          <span className="svg-icon svg-text icon-margin">
+                      {types.map((type,idx) => (
+                        <button className={"sort-button"} onClick={type.onClick} key={idx}>
+                          <span className={"svg-icon svg-text icon-margin"}>
                             {type.icon}
                           </span>
                           {type.label}
@@ -281,19 +307,20 @@ export default function Header({
                   )}
                 </div>
                 <div
-                  className="list-padding"
+                  className={"list-padding"}
                   key={shortId()}
                   style={{
                     borderTop: `2px solid ${grey(200)}`,
                   }}
                 >
-                  {buttons.map(button => (
+                  {buttons.map((button,idx) => (
                     <button
+                      key={idx}
                       type="button"
-                      className="sort-button"
+                      className={"sort-button"}
                       onMouseDown={button.onClick}
                     >
-                      <span className="svg-icon svg-text icon-margin">
+                      <span className={"svg-icon svg-text icon-margin"}>
                         {button.icon}
                       </span>
                       {button.label}
@@ -307,9 +334,9 @@ export default function Header({
       );
     }
     return (
-      <div {...getHeaderProps()} className="th noselect d-inline-block">
+      <div {...getHeaderProps()} className={"th noselect d-inline-block"}>
         <div
-          className="th-content d-flex justify-content-center"
+          className={"th-content d-flex justify-content-center"}
           onClick={e =>
             dataDispatch({
               type: 'add_column_to_left',
@@ -318,7 +345,7 @@ export default function Header({
             })
           }
         >
-          <span className="svg-icon-sm svg-gray">
+          <span className={"svg-icon-sm svg-gray"}>
             <PlusIcon />
           </span>
         </div>

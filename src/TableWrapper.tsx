@@ -1,6 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
-import './style.css';
-import Table from './Table';
+import {Table,Style} from './Table';
 import {
   randomColor,
   shortId,
@@ -122,9 +121,7 @@ function reducer(state, action) {
         },
       });
     case ActionTypes.ADD_COLUMN_TO_LEFT:
-      const leftIndex = state.columns.findIndex(
-        column => column.id === action.columnId
-      );
+      const leftIndex = state.columns.findIndex(column => column.id === action.columnId);
       let leftId = shortId();
       return update(state, {
         skipReset: { $set: true },
@@ -184,30 +181,25 @@ function reducer(state, action) {
   }
 }
 
-function App() {
-  const [state, dispatch] = useReducer(reducer, makeData(1000));
+function TableWrapper({ initialState, dispatch: externalDispatch }) {
+  console.log("Same?",{one: (React as any).one})
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     dispatch({ type: ActionTypes.ENABLE_RESET });
   }, [state.data, state.columns]);
 
   return (
-    <div
-      className="overflow-y-hidden"
-      style={{
-        width: '100vw',
-        height: '100vh',
-      }}
-    >
+    <>
+      <Style id="styles-table" />
       <Table
         columns={state.columns}
         data={state.data}
-        dispatch={dispatch}
+        dispatch={(e) => { externalDispatch(e); dispatch(e); }}
         skipReset={state.skipReset}
       />
-      <div id="popper-portal"></div>
-    </div>
+    </>
   );
 }
 
-export default App;
+export default TableWrapper;

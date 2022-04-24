@@ -1,0 +1,9 @@
+div.gallery > * {
+  margin: 5vh;
+}
+
+div.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
