@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import clsx from 'clsx';
 import {
   useTable,
@@ -155,6 +155,30 @@ export default function Table({
     </>
   );
 }
+
+export const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Inter', sans-serif;
+}
+
+#root {
+  margin: 0px;
+  padding: 0px;
+}
+`
 
 export const StyledTable = styled(Table)`
 
