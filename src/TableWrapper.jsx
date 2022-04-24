@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
-import Table from './Table.jsx';
+import {StyledTable} from './Table.jsx';
 import {
   randomColor,
   shortId,
@@ -189,7 +189,7 @@ function TableWrapper({ initialState, dispatch: externalDispatch }) {
   }, [state.data, state.columns]);
 
   return (
-      <Table
+      <StyledTable
         columns={state.columns}
         data={state.data}
         dispatch={(e) => { externalDispatch(e); dispatch(e); }}

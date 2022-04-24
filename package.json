@@ -24,7 +24,6 @@
     "dist",
     "README.md"
   ],
-  "dependencies": {},
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
@@ -58,7 +57,8 @@
     "react-window": "^1.8.6",
     "rollup": "^2.67.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2"
+    "rollup-plugin-postcss": "^4.0.2",
+    "styled-components": "^5.3.5"
   },
   "browserslist": {
     "production": [
