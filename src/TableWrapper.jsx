@@ -181,7 +181,7 @@ function reducer(state, action) {
   }
 }
 
-function TableWrapper({ initialState }) {
+function TableWrapper({ initialState, dispatch: externalDispatch }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -189,21 +189,12 @@ function TableWrapper({ initialState }) {
   }, [state.data, state.columns]);
 
   return (
-    <div
-      className="overflow-y-hidden"
-      style={{
-        width: '100vw',
-        height: '100vh',
-      }}
-    >
       <Table
         columns={state.columns}
         data={state.data}
-        dispatch={dispatch}
+        dispatch={(e) => { externalDispatch(e); dispatch(e); }}
         skipReset={state.skipReset}
       />
-      <div id="popper-portal"></div>
-    </div>
   );
 }
 
