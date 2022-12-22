@@ -42,6 +42,7 @@ html {
   position: relative;
   height: 1.5em;
   width: 1.5em;
+  top: 0.125rem;
 }
 
 .svg-text svg {
@@ -99,8 +100,9 @@ html {
 
 .svg-icon-sm svg {
   position: relative;
-  height: 1.25em;
-  width: 1.25em;
+  height: 1rem;
+  width: 1rem;
+  top: 0.125rem;
 }
 
 .svg-gray svg {
@@ -154,10 +156,6 @@ html {
   background-color: #eeeeee;
 }
 
-.tr:last-child .td {
-  border-bottom: 0;
-}
-
 .add-row {
   color: #9e9e9e;
   padding: 0.5rem;
@@ -166,6 +164,7 @@ html {
   font-size: 0.875rem;
   cursor: pointer;
   height: 50px;
+  border: 1px solid #e0e0e0;
 }
 
 .add-row:hover {
@@ -210,14 +209,6 @@ html {
   border-spacing: 0;
 }
 
-.th:last-child {
-  border-right: 0;
-}
-
-.td:last-child {
-  border-right: 0;
-}
-
 .resizer {
   display: inline-block;
   background: transparent;
@@ -240,9 +231,29 @@ html {
 .td {
   white-space: nowrap;
   margin: 0;
-  border-bottom: 1px solid #e0e0e0;
-  border-right: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
   position: relative;
+}
+
+.th {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tr:last-child .td {
+  border-bottom: 0;
+}
+
+.td:last-child {
+  border-right: 1px solid #e0e0e0;
+}
+
+.th:last-child {
+  border-right: 1px solid #e0e0e0;
+}
+
+.tr:first-child .td {
+  border-top: 0;
 }
 
 .text-align-right {
