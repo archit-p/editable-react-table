@@ -127,7 +127,7 @@ export default function Header({
     {
       onClick: e => {
         dataDispatch({
-          type: 'update_column_type',
+          type: ActionTypes.UPDATE_COLUMN_TYPE,
           columnId: id,
           dataType: DataTypes.SELECT,
         });
@@ -140,7 +140,7 @@ export default function Header({
     {
       onClick: e => {
         dataDispatch({
-          type: 'update_column_type',
+          type: ActionTypes.UPDATE_COLUMN_TYPE,
           columnId: id,
           dataType: DataTypes.TEXT,
         });
@@ -153,7 +153,7 @@ export default function Header({
     {
       onClick: e => {
         dataDispatch({
-          type: 'update_column_type',
+          type: ActionTypes.UPDATE_COLUMN_TYPE,
           columnId: id,
           dataType: DataTypes.NUMBER,
         });
@@ -168,7 +168,7 @@ export default function Header({
   function handleKeyDown(e) {
     if (e.key === 'Enter') {
       dataDispatch({
-        type: 'update_column_header',
+        type: ActionTypes.UPDATE_COLUMN_HEADER,
         columnId: id,
         label: header,
       });
@@ -182,7 +182,11 @@ export default function Header({
 
   function handleBlur(e) {
     e.preventDefault();
-    dataDispatch({ type: 'update_column_header', columnId: id, label: header });
+    dataDispatch({
+      type: ActionTypes.UPDATE_COLUMN_HEADER,
+      columnId: id,
+      label: header,
+    });
   }
 
   function getHeader() {
@@ -312,7 +316,7 @@ export default function Header({
           className="th-content d-flex justify-content-center"
           onClick={e =>
             dataDispatch({
-              type: 'add_column_to_left',
+              type: ActionTypes.ADD_COLUMN_TO_LEFT,
               columnId: 999999,
               focus: true,
             })
