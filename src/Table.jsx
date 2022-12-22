@@ -104,7 +104,7 @@ export default function Table({
   }
 
   return (
-    <>
+    <div style={{ maxWidth: '100vw', overflow: 'auto' }}>
       <div
         {...getTableProps()}
         className={clsx('table', isTableResizing() && 'noselect')}
@@ -136,6 +136,6 @@ export default function Table({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
