@@ -31,6 +31,7 @@ export default function NumberCell({
         value: value.value,
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value.update, columnId, rowIndex]);
 
   return (
