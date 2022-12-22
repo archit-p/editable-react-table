@@ -37,6 +37,7 @@ export default function SelectCell({
         value: value.value,
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, columnId, rowIndex]);
 
   useEffect(() => {

@@ -19,7 +19,7 @@
     "build": "vite build",
     "serve": "vite preview",
     "prepare": "husky install",
-    "lint": "prettier --check .",
+    "lint": "prettier --check . && eslint src/**/*.jsx",
     "format": "prettier --write ."
   },
   "devDependencies": {

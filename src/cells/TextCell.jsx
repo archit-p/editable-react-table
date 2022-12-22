@@ -31,6 +31,8 @@ export default function TextCell({
         value: value.value,
       });
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value.update, columnId, rowIndex]);
 
   return (
