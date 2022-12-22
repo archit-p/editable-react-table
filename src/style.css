@@ -340,6 +340,10 @@ html {
   overflow: auto;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .overflow-y-hidden {
   overflow-y: hidden;
 }

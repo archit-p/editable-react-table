@@ -193,7 +193,7 @@ function App() {
 
   return (
     <div
-      className="overflow-y-hidden"
+      className="overflow-hidden"
       style={{
         width: '100vw',
         height: '100vh',
