@@ -7,7 +7,7 @@ import {
   useSortBy,
 } from 'react-table';
 import Cell from './cells/Cell';
-import Header from './Header';
+import Header from './header/Header';
 import PlusIcon from './img/Plus';
 import { ActionTypes } from './utils';
 import { FixedSizeList } from 'react-window';

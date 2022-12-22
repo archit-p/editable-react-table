@@ -25,6 +25,10 @@ export function makeData(count) {
     data.push(row);
   }
 
+  options = options.filter(
+    (a, i, self) => self.findIndex(b => b.label === a.label) === i
+  );
+
   let columns = [
     {
       id: 'firstName',
@@ -67,7 +71,7 @@ export function makeData(count) {
       options: options,
     },
     {
-      id: 999999,
+      id: Constants.ADD_COLUMN_ID,
       width: 20,
       label: '+',
       disableResizing: true,
@@ -93,4 +97,8 @@ export const DataTypes = Object.freeze({
   NUMBER: 'number',
   TEXT: 'text',
   SELECT: 'select',
+});
+
+export const Constants = Object.freeze({
+  ADD_COLUMN_ID: 999999,
 });
