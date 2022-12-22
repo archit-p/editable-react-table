@@ -197,8 +197,12 @@ function App() {
       style={{
         width: '100vw',
         height: '100vh',
+        padding: 10,
       }}
     >
+      <div style={{ marginBottom: 40, marginTop: 40 }}>
+        <h1>Editable React Table - Demo</h1>
+      </div>
       <Table
         columns={state.columns}
         data={state.data}

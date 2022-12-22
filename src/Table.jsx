@@ -118,7 +118,7 @@ export default function Table({
         </div>
         <div {...getTableBodyProps()}>
           <FixedSizeList
-            height={window.innerHeight - 100}
+            height={480}
             itemCount={rows.length}
             itemSize={40}
             width={totalColumnsWidth + scrollbarWidth}
