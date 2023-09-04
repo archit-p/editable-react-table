@@ -19,6 +19,7 @@ export function makeData(count) {
       email: faker.internet.email(),
       age: Math.floor(20 + Math.random() * 20),
       music: faker.music.genre(),
+      media: '',
     };
     options.push({ label: row.music, backgroundColor: randomColor() });
 
@@ -71,6 +72,14 @@ export function makeData(count) {
       options: options,
     },
     {
+      id: 'media',
+      label: 'Media',
+      accessor: 'media',
+      minWidth: 150,
+      dataType: DataTypes.MEDIA,
+      options: [],
+    },
+    {
       id: Constants.ADD_COLUMN_ID,
       width: 20,
       label: '+',
@@ -97,6 +106,8 @@ export const DataTypes = Object.freeze({
   NUMBER: 'number',
   TEXT: 'text',
   SELECT: 'select',
+  MEDIA: 'media',  // Add this line
+
 });
 
 export const Constants = Object.freeze({

@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import MediaCell from './cells/MediaCell';
 import clsx from 'clsx';
 import {
   useTable,
@@ -101,6 +102,12 @@ export default function Table({
     }
 
     return false;
+  }
+
+  function handleMediaUpload(uploadedMedia) {
+    // For now, just log the uploaded media.
+    console.log("Uploaded media:", uploadedMedia);
+    // Later, you can update the table data or state with the details of the uploaded media.
   }
 
   return (

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@popperjs/core": "^2.0.0",
+    "axios": "^1.5.0",
     "clsx": "1.1.1",
     "faker": "^5.5.3",
     "immutability-helper": "^3.1.1",

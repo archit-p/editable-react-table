@@ -53,6 +53,18 @@ export default function TypesMenu({
       },
       icon: <DataTypeIcon dataType={DataTypes.NUMBER} />,
       label: getLabel(DataTypes.NUMBER),
+    }, {
+      type: DataTypes.MEDIA,
+      onClick: e => {
+        dataDispatch({
+          type: ActionTypes.UPDATE_COLUMN_TYPE,
+          columnId,
+          dataType: DataTypes.MEDIA,
+        });
+        onClose();
+      },
+      icon: <DataTypeIcon dataType={DataTypes.MEDIA} />,
+      label: getLabel(DataTypes.MEDIA),
     },
   ];
 
