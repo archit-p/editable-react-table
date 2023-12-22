@@ -1,10 +1,14 @@
-## Editable React Table
+# Editable React Table
+
+<!-- prettier-ignore -->
+> [!NOTE]
+> [Rowstack](https://rowstack.io) is a professional React database component I built that's brilliantly designed, feature rich and performant. Check it out!
 
 [![Edit editable-react-table](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/editable-react-table-gchwp?fontsize=14&hidenavigation=1&theme=dark)
 
 ![editable-react-table](https://user-images.githubusercontent.com/30985772/118361385-dd7caa00-b5a8-11eb-808b-1b4075f4a09d.gif)
 
-### Features
+## Features
 
 - Resizing columns
 - Cell data types - number, text, select
@@ -18,7 +22,7 @@
 - Changing column data types
 - Adding options for cells of type select
 
-### Getting Started
+## Getting Started
 
 1. Clone this repository.
 
@@ -33,11 +37,11 @@ npm install
 npm start
 ```
 
-### Contributions
+## Contributions
 
 Contributions are welcome! Feel free to pick an item from the roadmap below or open a fresh issue!
 
-### Roadmap
+## Roadmap
 
 - [x] Support for virtualized rows
 - [ ] Date data-type
